@@ -8,4 +8,4 @@
 - Frame work integration
 
 ## Demo
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/38227064/220056385-6871832c-5eb1-44b8-9d6e-f763c34ed96a.gif)
+![ezgif com-video-to-gif(3)](https://user-images.githubusercontent.com/38227064/220056385-6871832c-5eb1-44b8-9d6e-f763c34ed96a.gif)
