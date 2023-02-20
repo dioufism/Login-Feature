@@ -16,7 +16,6 @@
 		DA497EA129A1E41D0030F7E1 /* Login_FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497EA029A1E41D0030F7E1 /* Login_FeatureTests.swift */; };
 		DA497EAB29A1E41D0030F7E1 /* Login_FeatureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497EAA29A1E41D0030F7E1 /* Login_FeatureUITests.swift */; };
 		DA497EAD29A1E41D0030F7E1 /* Login_FeatureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497EAC29A1E41D0030F7E1 /* Login_FeatureUITestsLaunchTests.swift */; };
-		DA497EBA29A2CC430030F7E1 /* SigninViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497EB929A2CC430030F7E1 /* SigninViewmodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		DA497EA629A1E41D0030F7E1 /* Login FeatureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Login FeatureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA497EAA29A1E41D0030F7E1 /* Login_FeatureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_FeatureUITests.swift; sourceTree = "<group>"; };
 		DA497EAC29A1E41D0030F7E1 /* Login_FeatureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_FeatureUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DA497EB929A2CC430030F7E1 /* SigninViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewmodel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				DA497E8F29A1E41A0030F7E1 /* Login_FeatureApp.swift */,
-				DA497EB929A2CC430030F7E1 /* SigninViewmodel.swift */,
 				DA497E9129A1E41A0030F7E1 /* ContentView.swift */,
 				DA497E9329A1E41C0030F7E1 /* Assets.xcassets */,
 				DA497E9529A1E41C0030F7E1 /* Preview Content */,
@@ -288,7 +285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA497EBA29A2CC430030F7E1 /* SigninViewmodel.swift in Sources */,
 				DA497E9229A1E41A0030F7E1 /* ContentView.swift in Sources */,
 				DA497E9029A1E41A0030F7E1 /* Login_FeatureApp.swift in Sources */,
 			);
