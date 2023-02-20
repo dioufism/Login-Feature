@@ -8,4 +8,4 @@
 - Frame work integration
 
 ## Demo
-Screen Recording 2022-10-28 at 6.10.04 PM
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/38227064/220056385-6871832c-5eb1-44b8-9d6e-f763c34ed96a.gif)
