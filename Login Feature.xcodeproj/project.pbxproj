@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA134D7929A3504300094851 /* Alchemy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA134D7829A3504300094851 /* Alchemy.framework */; };
+		DA134D7A29A3504300094851 /* Alchemy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA134D7829A3504300094851 /* Alchemy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA497E9029A1E41A0030F7E1 /* Login_FeatureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497E8F29A1E41A0030F7E1 /* Login_FeatureApp.swift */; };
 		DA497E9229A1E41A0030F7E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA497E9129A1E41A0030F7E1 /* ContentView.swift */; };
 		DA497E9429A1E41C0030F7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA497E9329A1E41C0030F7E1 /* Assets.xcassets */; };
@@ -34,7 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DA134D7B29A3504400094851 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA134D7A29A3504300094851 /* Alchemy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DA134D7829A3504300094851 /* Alchemy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alchemy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA497E8C29A1E41A0030F7E1 /* Login Feature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Login Feature.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA497E8F29A1E41A0030F7E1 /* Login_FeatureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_FeatureApp.swift; sourceTree = "<group>"; };
 		DA497E9129A1E41A0030F7E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA134D7929A3504300094851 /* Alchemy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA134D7729A3504300094851 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA134D7829A3504300094851 /* Alchemy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA497E8329A1E41A0030F7E1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,7 @@
 				DA497E9F29A1E41D0030F7E1 /* Login FeatureTests */,
 				DA497EA929A1E41D0030F7E1 /* Login FeatureUITests */,
 				DA497E8D29A1E41A0030F7E1 /* Products */,
+				DA134D7729A3504300094851 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +167,7 @@
 				DA497E8829A1E41A0030F7E1 /* Sources */,
 				DA497E8929A1E41A0030F7E1 /* Frameworks */,
 				DA497E8A29A1E41A0030F7E1 /* Resources */,
+				DA134D7B29A3504400094851 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

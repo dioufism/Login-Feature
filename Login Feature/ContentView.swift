@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import Alchemy
 
 struct ContentView: View {
-    @StateObject var viewModel = SignInViewModel()
+    @StateObject var auth = AuthLayer()
     
     var body: some View {
-        if viewModel.isAuthenticated {
+        if auth.isAuthenticated {
             VStack {
-                Text("Welcome back **\(viewModel.username.lowercased())**!")
+                Text("Welcome back **\(auth.username.lowercased())**!")
                 
-                Button("Log out", action: viewModel.logout)
+                Button("Log out", action: auth.logout)
                     .tint(.green)
                     .buttonStyle(.borderedProminent)
             }
@@ -30,12 +31,12 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 50, weight: .heavy, design: .serif))
                     
-                    TextField("Username", text: $viewModel.username)
+                    TextField("Username", text: $auth.username)
                         .padding([.leading, .trailing], 16)
                         .textFieldStyle(.roundedBorder)
                         .textInputAutocapitalization(.never)
                     
-                    SecureField("Password", text: $viewModel.password)
+                    SecureField("Password", text: $auth.password)
                         .padding([.leading, .trailing], 16)
                         .textFieldStyle(.roundedBorder)
                         .textInputAutocapitalization(.never)
@@ -44,14 +45,14 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         
-                        Button("Forgot Password", action: viewModel.buttonPressed)
+                        Button("Forgot Password", action: auth.buttonPressed)
                             .tint(.green)
                             .buttonStyle(.borderedProminent)
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                         
                         Spacer()
                         
-                        Button("Log in", action: viewModel.authenticate)
+                        Button("Log in", action: auth.authenticate)
                             .tint(.green)
                             .buttonStyle(.borderedProminent)
                         
@@ -60,8 +61,8 @@ struct ContentView: View {
                     
                     Spacer()
                 }
-                .alert("Access Denied", isPresented: $viewModel.invalidCredentials) {
-                    Button("Dismiss", action: viewModel.buttonPressed)
+                .alert("Access Denied", isPresented: $auth.invalidCredentials) {
+                    Button("Dismiss", action: auth.buttonPressed)
                 }
 
             }
