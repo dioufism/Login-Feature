@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Alchemy
 
 @main
 struct Login_FeatureApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(auth: AuthLayer())
         }
     }
 }

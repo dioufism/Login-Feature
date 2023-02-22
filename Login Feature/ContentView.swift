@@ -8,11 +8,13 @@
 import SwiftUI
 import Alchemy
 
-struct ContentView: View {
-    @StateObject var auth = AuthLayer()
+struct ContentView<Model>: View where Model: AuthProtocol & AuthLayer  {
+    @StateObject var auth: Model
+    
+    var backgroundImage: Image = Image("sevenEleven2")
     
     var body: some View {
-        if auth.isAuthenticated {
+        if $auth.isAuthenticated.wrappedValue {
             authenticatedView
             
         } else {
@@ -23,22 +25,22 @@ struct ContentView: View {
                     loginView
                     
                     buttons
-            
+                
                     Spacer()
                 }
-                .alert("Access Denied", isPresented: $auth.invalidCredentials) {
+                .alert("Access Denied", isPresented: .constant($auth.invalidCredentials.wrappedValue)) {
                     Button("Dismiss", action: auth.buttonPressed)
                 }
 
             }
             .transition(.offset(x:0, y: 850))
-            .background(Image("sevenEleven2"))
+            .background(backgroundImage)
         }
     }
     
     var authenticatedView: some View {
         VStack {
-            Text("Welcome back **\(auth.username.lowercased())**!")
+            Text("Welcome back **\($auth.username.wrappedValue.lowercased())**!")
             
             Button("Log out", action: auth.logout)
                 .tint(.green)
@@ -54,14 +56,10 @@ struct ContentView: View {
             .font(.system(size: 50, weight: .heavy, design: .serif))
         
         TextField("Username", text: $auth.username)
-            .padding([.leading, .trailing], 16)
-            .textFieldStyle(.roundedBorder)
-            .textInputAutocapitalization(.never)
+            .textFieldStyle(CustomTextFieldStyle())
         
         SecureField("Password", text: $auth.password)
-            .padding([.leading, .trailing], 16)
-            .textFieldStyle(.roundedBorder)
-            .textInputAutocapitalization(.never)
+            .textFieldStyle(CustomTextFieldStyle())
             .privacySensitive()
     }
     
@@ -70,23 +68,47 @@ struct ContentView: View {
             Spacer()
             
             Button("Forgot Password", action: auth.buttonPressed)
-                .tint(.green)
-                .buttonStyle(.borderedProminent)
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .buttonStyle(FilledButton())
             
             Spacer()
             
             Button("Log in", action: auth.authenticate)
-                .tint(.green)
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(FilledButton())
             
             Spacer()
         }
     }
+    
+    // Custom modifier that allows to abstract the style of our buttons
+    struct FilledButton: ButtonStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            configuration
+                .label
+                .font(Font.title3)
+                .fontWeight(Font.Weight.semibold)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.green)
+                .cornerRadius(15)
+        }
+    }
+    
+    // Custom modifier that allows to abstract the style of our textFiels
+    struct CustomTextFieldStyle: TextFieldStyle {
+        func _body(configuration: TextField<Self._Label>) -> some View {
+            configuration
+                .cornerRadius(20)
+                .shadow(color: .gray, radius: 10)
+                .padding([.leading, .trailing], 16)
+                .textFieldStyle(.roundedBorder)
+                .textInputAutocapitalization(.never)
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(auth: AuthLayer())
     }
 }
