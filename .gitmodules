@@ -1,0 +1,3 @@
+[submodule "Alchemy"]
+	path = Alchemy
+	url = https://github.com/dioufism/Alchemy.git
