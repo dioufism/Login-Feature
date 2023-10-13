@@ -6,6 +6,8 @@
 ## Features
 - swiftUI
 - swift Package
+- Separation of concerns
+- CocoaPods
 - MVVM
 - Protocols and Delegate
 - SOLID principles
